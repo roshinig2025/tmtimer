@@ -81,7 +81,7 @@ function startTimer(){
 	var invalidArray = [];
 	var readableArray = [];
 	for(i=0; i<customArray.length; i++){
-		if (validate(customArray[i], RegExp(/^[0-9]{1,2}:[0-5]{1}[0-9]{1}$/)) === false) {
+		if (customArray[i].value !== "" && validate(customArray[i], RegExp(/^[0-9]{1,2}:[0-5]{1}[0-9]{1}$/)) === false) {
 			invalidArray.push(customArray[i]);
 		}
 	}
