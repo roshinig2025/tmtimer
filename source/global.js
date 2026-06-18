@@ -139,7 +139,7 @@ function reportTime(){
 				toggle = true;
 			}
 		}
-			pulsateIntervalId = setInterval(pulse, 300);
+		pulsateIntervalId = setInterval(pulse, 300);
 	}
 }
 
