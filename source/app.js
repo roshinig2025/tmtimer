@@ -43,6 +43,8 @@ function setCustomValues(){
 		doSetCustomValues("2:00", "2:30", "3:00", "3:30");
 	} else if (getCheckedValue(radioOptions) === "speech"){
 		doSetCustomValues("5:00", "6:00", "7:00", "7:30");
+	} else if (getCheckedValue(radioOptions) === "grace30s"){
+		doSetCustomValues("", "", "0:30", "");
 	} else if (getCheckedValue(radioOptions) === "custom"){
 		doSetCustomValues("", "", "", "");
 		// Move focus to first custom field:
