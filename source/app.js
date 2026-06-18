@@ -122,10 +122,10 @@ function startTimer(){
 	}
 	
 	// let's grab the times from the input fields
-	minTime = timeToMs(customGreenLight.value);
-	midTime = timeToMs(customYellowLight.value);
-	maxTime = timeToMs(customRedLight.value);
-	dqTime = timeToMs(customDq.value);
+	minTime = customGreenLight.value ? timeToMs(customGreenLight.value) : null;
+	midTime = customYellowLight.value ? timeToMs(customYellowLight.value) : null;
+	maxTime = customRedLight.value ? timeToMs(customRedLight.value) : null;
+	dqTime = customDq.value ? timeToMs(customDq.value) : null;
 	
 	// now that we are running, time to change the ui a bit
 	controlButton.innerHTML = "Stop";
@@ -138,7 +138,7 @@ function startTimer(){
 	hideControls();
 	
 	// begin growing the chrono bar
-	growerAnimation = TweenLite.to(grower, dqTime / 1000, {css:{width:"100%"}});
+	growerAnimation = TweenLite.to(grower, (dqTime || maxTime) / 1000, {css:{width:"100%"}});
 	
 	// tick tock, start the clock
 	clockElement.innerHTML = (msToTime(0));
