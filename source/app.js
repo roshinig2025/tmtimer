@@ -291,7 +291,7 @@ function validateWatch(toWatch){
 }
 
 var validateThis = function(toValidate){
-	if (/^[0-9]{1,2}:[0-5]{1}[0-9]{1}$/.test(toValidate.value) === true){
+	if (toValidate.value === "" || /^[0-9]{1,2}:[0-5]{1}[0-9]{1}$/.test(toValidate.value) === true){
 		toValidate.className = "valid";
 	} else {
 		toValidate.className = "invalid";
