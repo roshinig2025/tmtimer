@@ -120,15 +120,15 @@ function reportTime(){
 	clockElement.innerHTML = (msToTime(currentTime));
 	
 	// change the background colors
-	if(currentTime < minTime){
+	if(minTime !== null && currentTime < minTime){
 		colorChange(defaultColor);
-	} else if(currentTime === minTime){
+	} else if(minTime !== null && currentTime === minTime){
 		colorChange(minColor);
-	} else if(currentTime === midTime){
+	} else if(midTime !== null && currentTime === midTime){
 		colorChange(midColor);
-	} else if(currentTime === maxTime){
+	} else if(maxTime !== null && currentTime === maxTime){
 		colorChange(maxColor);
-	} else if(currentTime === dqTime){
+	} else if(dqTime !== null && currentTime === dqTime){
 		var toggle = true;
 		var pulse = function(){
 			if(toggle === true){
@@ -139,7 +139,7 @@ function reportTime(){
 				toggle = true;
 			}
 		}
-		pulsateIntervalId = setInterval(pulse, 300);
+			pulsateIntervalId = setInterval(pulse, 300);
 	}
 }
 
